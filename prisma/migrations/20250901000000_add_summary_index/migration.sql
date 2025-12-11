@@ -1,0 +1,1 @@
+ALTER TABLE "ChatSession" ADD COLUMN "summaryIndex" INTEGER NOT NULL DEFAULT 0;

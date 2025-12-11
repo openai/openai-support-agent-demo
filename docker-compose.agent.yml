@@ -1,0 +1,65 @@
+services:
+  ai-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent
+    restart: unless-stopped
+    env_file:
+      - .env.ai
+    ports:
+      - '3001:3001'
+    depends_on: # services reference each other via these container names
+      - postgres
+      - redis
+      - ollama
+    entrypoint: docker/entrypoints/ai-agent.sh
+    networks:
+      - support-net
+    volumes:
+      - ./logs/scrape_jobs:/app/logs/scrape_jobs
+      - ./public/knowledge_base:/app/public/knowledge_base
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: demo-db
+    restart: always
+    ports:
+      - '5434:5432' # use host port 5434 to avoid conflicts with local Postgres on 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - support-net
+
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - '6380:6379' # use host port 6380 to avoid conflicts with local Redis on 6379
+    volumes:
+      - redis_data:/data
+    container_name: demo-redis
+    networks:
+      - support-net
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - '11434:11434'
+    volumes:
+      - ollama:/root/.ollama
+    networks:
+      - support-net
+
+volumes:
+  postgres_data:
+  redis_data:
+  ollama:
+
+networks:
+  support-net:
+    external: true

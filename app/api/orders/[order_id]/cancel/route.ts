@@ -1,9 +1,8 @@
 export async function POST(
   request: Request,
-  context: { params: { order_id: string } }
+  { params }: { params: Promise<{ order_id: string }> }
 ) {
   try {
-    const { params } = context;
     const { order_id } = await params;
     // Simulate order cancellation
     return new Response(

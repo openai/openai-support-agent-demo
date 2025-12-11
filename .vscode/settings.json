@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./crawl4AI-agent-v2"
+    ]
+}

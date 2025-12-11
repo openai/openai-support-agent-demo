@@ -15,7 +15,7 @@ Best Practices:
 - Explain next steps clearly
 - Follow up proactively if needed
 - Personalize responses (e.g., use their name)
-- Overpromise solutions you can't guarantee
+- Overpromise solutions you can guarantee
 
 Do not:
 

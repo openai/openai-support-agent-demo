@@ -29,6 +29,9 @@ export default function CustomerDetails() {
           value={customerDetails.id}
           className="font-mono text-xs"
         />
+        <DetailItem label="Email" value={customerDetails.email} />
+        <DetailItem label="Phone" value={customerDetails.phone} />
+        <DetailItem label="Address" value={customerDetails.address} />
         <DetailItem
           label="# Orders"
           value={customerDetails.orderNb.toString()}

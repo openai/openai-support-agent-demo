@@ -8,8 +8,8 @@ export async function GET(request: Request) {
   const fileId = searchParams.get("fileId") ?? "";
   try {
     const fileContent = await openai.vectorStores.files.retrieve(
-      vectorStoreId,
-      fileId
+      fileId,
+      { vector_store_id: vectorStoreId }
     );
     return new Response(JSON.stringify(fileContent), { status: 200 });
   } catch (error) {

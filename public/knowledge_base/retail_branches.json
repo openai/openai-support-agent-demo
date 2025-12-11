@@ -1,0 +1,282 @@
+{
+  "type": "branch_directory",
+  "version": "1.0",
+  "items": [
+    {
+      "branch_id": "afienya",
+      "name": "Afienya Shop",
+      "aliases": [
+        "Afienya Shop",
+        "Afienya"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Afienya",
+      "address_hint": "Opposite Cecilia Marfo Junction",
+      "phone_raw": "0506787422",
+      "phone_e164": "+233506787422",
+      "google_maps_url": "https://maps.app.goo.gl/M71Tdd5Zdkbv68a69",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "head-office",
+      "name": "Head Office Shop",
+      "aliases": [
+        "Head Office Shop",
+        "Head Office"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Accra (Head Office)",
+      "address_hint": "Behind Calbank",
+      "phone_raw": "0233303701",
+      "phone_e164": "+233233303701",
+      "google_maps_url": "https://maps.app.goo.gl/5SHfRLiD1qLR8YsC9",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "industrial-area",
+      "name": "Industrial Area Shop",
+      "aliases": [
+        "Industrial Area Shop",
+        "Industrial Area"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Accra (Industrial Area)",
+      "address_hint": "Near Melcom Plus",
+      "phone_raw": "0233303704",
+      "phone_e164": "+233303704",
+      "google_maps_url": "https://maps.app.goo.gl/RCju7P4RsxXaVRxx6",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "kasoa-tuba-junction",
+      "name": "Kasoa Tuba Junction Shop",
+      "aliases": [
+        "Kasoa Tuba Junction Shop",
+        "Kasoa"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Kasoa",
+      "address_hint": null,
+      "phone_raw": "0506787111",
+      "phone_e164": "+233506787111",
+      "google_maps_url": "https://maps.app.goo.gl/d9t8LKK5QBYPUC9c9",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "kumasi-adum-1",
+      "name": "Kumasi Adum 1 Shop",
+      "aliases": [
+        "Kumasi Adum 1 Shop",
+        "Kumasi Adum 1"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Kumasi",
+      "address_hint": "Opposite Westend Tiles",
+      "phone_raw": "0508864119",
+      "phone_e164": "+233508864119",
+      "google_maps_url": "https://maps.app.goo.gl/Si7EwLsSNogrVuhh6",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "kumasi-adum-2",
+      "name": "Kumasi Adum 2 Shop",
+      "aliases": [
+        "Kumasi Adum 2 Shop",
+        "Kumasi Adum 2"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Kumasi",
+      "address_hint": "Opposite Agasco Electricals",
+      "phone_raw": "0509554646",
+      "phone_e164": "+233509554646",
+      "google_maps_url": "https://maps.app.goo.gl/C4rdeXmUpoRup1Uf8",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "opera-square-1",
+      "name": "Opera Square 1 Shop",
+      "aliases": [
+        "Opera Square 1 Shop",
+        "Opera Square 1"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Accra (Opera Square)",
+      "address_hint": "Near Post Office",
+      "phone_raw": "0231816360",
+      "phone_e164": "+233231816360",
+      "google_maps_url": "https://maps.app.goo.gl/TTwhHczRRXC6UQCCA",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "opera-square-2-cowlane",
+      "name": "Opera Square 2 Shop",
+      "aliases": [
+        "Opera Square 2 Shop",
+        "Opera Square 2"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Accra (Opera Square)",
+      "address_hint": "Cowlane",
+      "phone_raw": "0502060638",
+      "phone_e164": "+233502060638",
+      "google_maps_url": "https://maps.app.goo.gl/vjYkjLnd5DJtL3mr9",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "opera-square-3",
+      "name": "Opera Square 3 Shop",
+      "aliases": [
+        "Opera Square 3 Shop",
+        "Opera Square 3"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Accra (Opera Square)",
+      "address_hint": "Opposite SIC Mall",
+      "phone_raw": "0501676297",
+      "phone_e164": "+233501676297",
+      "google_maps_url": "https://maps.app.goo.gl/rnySkahLQAcTnhdp8",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "oyarifa",
+      "name": "Oyarifa Shop",
+      "aliases": [
+        "Oyarifa Shop",
+        "Oyarifa"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Oyarifa",
+      "address_hint": "Near Fidelity Bank",
+      "phone_raw": "0506787405",
+      "phone_e164": "+233506787405",
+      "google_maps_url": "https://maps.app.goo.gl/SiiN8FbVx9Uft1sY8",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "takoradi",
+      "name": "Takoradi Shop",
+      "aliases": [
+        "Takoradi Shop",
+        "Takoradi"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Takoradi",
+      "address_hint": "Near Elok Jewellery",
+      "phone_raw": "0509554650",
+      "phone_e164": "+233509554650",
+      "google_maps_url": "https://maps.app.goo.gl/nCDMDEnVdngcg2Bm9",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    },
+    {
+      "branch_id": "tema-community-25",
+      "name": "Tema Community 25 Shop",
+      "aliases": [
+        "Tema Community 25 Shop",
+        "Tema Community 25"
+      ],
+      "category": "retail-branch",
+      "country": "Ghana",
+      "city_or_area": "Tema",
+      "address_hint": "Estate Junction",
+      "phone_raw": "0506787413",
+      "phone_e164": "+233506787413",
+      "google_maps_url": "https://maps.app.goo.gl/wbcbK34gW1Gi5VYHA",
+      "tags": [
+        "store",
+        "retail",
+        "branch",
+        "contact"
+      ],
+      "source": "user-provided list (2025-09-11)",
+      "last_verified": "2025-09-11"
+    }
+  ]
+}

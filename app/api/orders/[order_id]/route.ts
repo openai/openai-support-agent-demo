@@ -1,12 +1,12 @@
-import { DEMO_ORDERS } from "@/config/demoData";
+import prisma from "@/lib/prisma";
 
 export async function GET(
   request: Request,
-  { params }: { params: { order_id: string } }
+  { params }: { params: Promise<{ order_id: string }> }
 ) {
   try {
-    const { order_id } = params;
-    const order = DEMO_ORDERS.find((order) => order.id === order_id);
+    const { order_id } = await params;
+    const order = await prisma.order.findUnique({ where: { orderId: order_id } });
     if (!order) {
       return new Response(JSON.stringify({ error: "Order not found" }), {
         status: 404,

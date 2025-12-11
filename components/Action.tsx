@@ -29,12 +29,18 @@ export default function Action({
   const addConversationItem = useConversationStore(
     (s) => s.addConversationItem
   );
+  const modelProvider = useConversationStore((s) => s.modelProvider);
   const removeRecommendedAction = useConversationStore(
     (s) => s.removeRecommendedAction
   );
   const handleConfirm = async () => {
     setLoading(true);
-    const result = await handleTool(functionName, parameters, "execute");
+    const result = await handleTool(
+      functionName,
+      parameters,
+      "execute",
+      modelProvider
+    );
     if (result.result) {
       console.log("Executed function", functionName, parameters, result);
       // Add to conversation as a new assistant message
@@ -55,7 +61,7 @@ export default function Action({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <div className="bg-black hover:bg-zinc-800 text-white px-3 py-1.5 text-sm rounded-lg cursor-pointer">
+          <div className="bg-[#2B83F6] hover:bg-[#2B83F6]/90 text-white px-3 py-1.5 text-sm rounded-lg cursor-pointer">
           {name}
         </div>
       </DialogTrigger>

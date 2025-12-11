@@ -1,0 +1,1 @@
+ALTER TABLE "ChatSession" ADD COLUMN "unsummarizedLimit" INTEGER NOT NULL DEFAULT 50;

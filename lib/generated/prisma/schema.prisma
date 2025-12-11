@@ -1,0 +1,186 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../lib/generated/prisma"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ScrapeJobStatus {
+  queued
+  running
+  completed
+  failed
+  canceled
+}
+
+enum ScrapeJobCadence {
+  manual
+  daily
+  weekly
+  monthly
+}
+
+enum AgentRole {
+  admin
+  agent
+}
+
+enum LoginAuditStatus {
+  token_sent
+  verified
+  failure
+  success
+}
+
+model User {
+  id          String        @id @default(uuid())
+  email       String        @unique
+  name        String?
+  phone       String?
+  address     String?
+  longSummary String?       @db.Text
+  createdAt   DateTime      @default(now())
+  orders      Order[]
+  sessions    ChatSession[]
+  tickets     Ticket[]
+}
+
+model Order {
+  id        String   @id @default(uuid())
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+  orderId   String   @unique
+  createdAt DateTime @default(now())
+  status    String?
+}
+
+model ChatSession {
+  id                  String    @id @default(uuid())
+  user                User      @relation(fields: [userId], references: [id])
+  userId              String
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  endedAt             DateTime?
+  messages            Json // or a separate Message model
+  summary             String?   @db.Text
+  lastSummarizedIndex Int       @default(0)
+  unsummarizedLimit   Int       @default(50)
+}
+
+model Ticket {
+  id        String   @id @default(uuid())
+  ticket    String
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model ConversationMessage {
+  id              Int      @id @default(autoincrement())
+  messageId       Int
+  conversationId  Int
+  inboxId         Int
+  conversationKey String
+  sender          String
+  content         String   @db.Text
+  createdAt       DateTime @default(now())
+
+  @@unique([conversationKey, messageId])
+}
+
+model AgentAssignment {
+  inboxId                Int
+  agentId                Int
+  lastAssignedAt         DateTime?
+  activeConversationId   Int?
+  availabilityBeforeBusy AgentAvailability?
+
+  @@id([inboxId, agentId])
+}
+
+enum AgentAvailability {
+  online
+  busy
+  offline
+}
+
+enum HandoffRequestStatus {
+  pending
+  awaiting_confirmation
+  assigned
+  expired
+}
+
+model HandoffRequest {
+  conversationKey      String               @id
+  conversationId       Int
+  accountId            Int
+  inboxId              Int
+  requestedAt          DateTime             @default(now())
+  status               HandoffRequestStatus @default(pending)
+  agentId              Int?
+  lastPositionNotified Int?
+}
+
+model ScrapeJob {
+  id                    String           @id @default(uuid())
+  script                String
+  args                  Json?
+  status                ScrapeJobStatus  @default(queued)
+  cadence               ScrapeJobCadence @default(manual)
+  autoRunManualWithNext Boolean          @default(false)
+  paused                Boolean          @default(false)
+  progress              Int              @default(0)
+  startedAt             DateTime?
+  finishedAt            DateTime?
+  logPath               String?
+  nextRunAt             DateTime?
+  durationSeconds       Float?
+  documentsIngested     Int?
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+}
+
+model AgentAccount {
+  userId         String       @id
+  hashedPin      String
+  telegramChatId String?
+  roles          AgentRole[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  loginTokens    LoginToken[]
+  audits         LoginAudit[]
+}
+
+model LoginToken {
+  id         String    @id @default(uuid())
+  agentId    String
+  tokenHash  String
+  expiresAt  DateTime
+  consumedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  agent AgentAccount @relation(fields: [agentId], references: [userId], onDelete: Cascade)
+}
+
+model LoginAudit {
+  id        String           @id @default(uuid())
+  agentId   String
+  status    LoginAuditStatus
+  ip        String?
+  userAgent String?
+  note      String?
+  createdAt DateTime         @default(now())
+
+  agent AgentAccount @relation(fields: [agentId], references: [userId], onDelete: Cascade)
+}

@@ -36,7 +36,7 @@ const Switch = React.forwardRef<
 // Add custom styles for the 'custom' mode
 const customStyles = `
   .bg-custom-background { background-color: #f0f0f0; }
-  .bg-custom-thumb { background-color: #ff6347; }
+  .bg-custom-thumb { background-color: #2B83F6; }
 `;
 
 // Inject custom styles into the document

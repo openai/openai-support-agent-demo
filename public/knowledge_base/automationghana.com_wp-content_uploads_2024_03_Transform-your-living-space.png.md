@@ -1,0 +1,1 @@
+![](https://automationghana.com/wp-content/uploads/2024/03/Transform-your-living-space-into-a-dynamic-environment-that-caters-to-every-aspect-of-your-life-making-it-not-just-a-home-but-a-smart-haven.png)

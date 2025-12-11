@@ -23,7 +23,7 @@ function FunctionCall({ toolCall }: ToolCallProps) {
   return (
     <div className="w-full mb-4">
       <div
-        className="flex gap-1 items-center justify-end w-full px-4 text-[#ED6A5E]  cursor-pointer"
+        className="flex gap-1 items-center justify-end w-full px-4 text-[#2B83F6]  cursor-pointer"
         onClick={toggleShowDetails}
       >
         <div className="flex gap-2 items-center">
@@ -90,7 +90,7 @@ function FunctionCall({ toolCall }: ToolCallProps) {
 
 function FileSearchCall({ toolCall }: ToolCallProps) {
   return (
-    <div className="flex gap-2 items-center text-[#ED6A5E] justify-end w-full mb-4 mr-2">
+    <div className="flex gap-2 items-center text-[#2B83F6] justify-end w-full mb-4 mr-2">
       <BookOpenText size={16} />
       <div className="text-sm font-medium mb-0.5">
         {toolCall.status === "completed"

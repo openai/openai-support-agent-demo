@@ -33,10 +33,17 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 !.env.example
+!.env.ai
+!.env.scrapers
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+products.json
+
+# local data
+data/
+/logs/scrape_jobs
+/crawl4AI-agent/crawl4AI-examples/output/benchmarks

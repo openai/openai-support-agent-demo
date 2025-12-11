@@ -30,19 +30,17 @@ function TypingIndicatorDot({
 }
 
 function TypingIndicator({ sender }: { sender: "user" | "agent" }) {
-  const color = sender === "user" ? "bg-zinc-900" : "bg-white";
+  const color = sender === "user" ? "bg-zinc-900" : "bg-zinc-900";
   return (
     <div
-      className={`flex mb-5 ${
-        sender === "user" ? "justify-start" : "justify-end"
-      }`}
+      className={`flex mb-5 ${sender === "user" ? "justify-start" : "justify-start"
+        }`}
     >
       <div
-        className={`flex gap-1 items-center rounded-[16px] px-4 py-3 ${
-          sender === "user"
-            ? "text-zinc-900 bg-[#ECECF1] mr-4 md:mr-24 rounded-bl-[4px]"
-            : "bg-black text-white ml-4 md:ml-24 rounded-br-[4px]"
-        }`}
+        className={`flex gap-1 items-center rounded-[16px] px-4 py-3 ${sender === "user"
+          ? "text-zinc-900 bg-[#ECECF1] mr-4 md:mr-24 rounded-bl-[4px]"
+          : "text-zinc-900 bg-[#ECECF1] mr-4 md:mr-24 rounded-bl-[4px]"
+          }`}
       >
         <TypingIndicatorDot delay="0s" color={color} />
         <TypingIndicatorDot delay="0.2s" color={color} />
@@ -75,6 +73,7 @@ export default function Chat({ items, view, onSendMessage }: ChatProps) {
   );
   const composerText = useConversationStore((s) => s.composerText);
   const setComposerText = useConversationStore((s) => s.setComposerText);
+  const autoReply = useConversationStore((s) => s.autoReply);
 
   useEffect(() => {
     itemsEndRef.current?.scrollIntoView({ behavior: "instant" });
@@ -165,20 +164,20 @@ export default function Chat({ items, view, onSendMessage }: ChatProps) {
           <div className="flex flex-col gap-1 mb-5">
             <Message message={suggestedMessage} view={view} suggestion={true} />
 
-            {suggestedMessageDone ? (
+            {suggestedMessageDone && !autoReply ? (
               <div className="flex justify-end text-xs mt-2">
                 <div className="flex flex-col gap-1">
                   <div className="mt-2 flex gap-2">
                     <div
                       onClick={handleSendNow}
-                      className="cursor-pointer flex items-center gap-1 px-3 py-1 font-medium rounded-md bg-black text-white hover:bg-zinc-800"
+                      className="cursor-pointer flex items-center gap-1 px-3 py-1 font-medium rounded-md bg-[#2B83F6] text-white hover:bg-[#2B83F6]/90"
                     >
                       <SendIcon className="w-3 h-3" />
                       Send now
                     </div>
                     <div
                       onClick={handleEdit}
-                      className="cursor-pointer flex items-center gap-1 px-3 py-1 font-medium rounded-md bg-black text-white hover:bg-zinc-800"
+                      className="cursor-pointer flex items-center gap-1 px-3 py-1 font-medium rounded-md bg-[#2B83F6] text-white hover:bg-[#2B83F6]/90"
                     >
                       <PencilIcon className="w-3 h-3" />
                       Edit
@@ -231,7 +230,7 @@ export default function Chat({ items, view, onSendMessage }: ChatProps) {
                       : !inputMessageText.trim()
                   }
                   data-testid="send-button"
-                  className="flex h-8 w-8 items-end justify-center rounded-full bg-black text-white hover:opacity-70 disabled:bg-gray-300 disabled:text-gray-400 transition-colors focus:outline-none"
+                    className="flex h-8 w-8 items-end justify-center rounded-full bg-[#2B83F6] text-white hover:bg-[#2B83F6]/90 disabled:bg-gray-300 disabled:text-gray-400 transition-colors focus:outline-none"
                   onClick={handleSendMessage}
                 >
                   <svg

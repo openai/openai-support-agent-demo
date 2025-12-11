@@ -2,6 +2,30 @@
 import { Link } from "lucide-react";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import ImageModal from "./ImageModal";
+import ChatImage from "./ChatImage";
+import { ImageProps } from "next/image";
+import type { Components } from "react-markdown";
+
+const markdownComponents: Components = {
+  img: (props) => (
+    <ImageModal src={(props.src as string) ?? ''}>
+      <ChatImage
+        {...(props as unknown as ImageProps)}
+        alt={props.alt || 'image'}
+        className="object-cover rounded-md cursor-pointer"
+      />
+    </ImageModal>
+  ),
+  a: ({ node, ...props }) => {
+    void node;
+    return (
+      <a {...props} target="_blank" rel="noopener noreferrer">
+        {props.children}
+      </a>
+    );
+  },
+};
 
 export default function ListArticles({
   title,
@@ -48,7 +72,7 @@ export default function ListArticles({
     };
 
     fetchFiles();
-  }, []);
+  }, [folder]);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -78,13 +102,16 @@ export default function ListArticles({
             {title}
             <Link
               size={16}
-              className="text-[#ED6A5E] cursor-pointer hover:size-[18px] transition-all duration-100"
+              className="text-[#2B83F6] cursor-pointer hover:size-[18px] transition-all duration-100"
               onClick={() => {
                 getLink(id);
               }}
             />
           </h2>
-          <ReactMarkdown className="text-zinc-600 prose prose-zinc text-justify">
+          <ReactMarkdown
+            components={markdownComponents}
+            className="text-zinc-600 prose prose-zinc text-justify"
+          >
             {content}
           </ReactMarkdown>
         </div>

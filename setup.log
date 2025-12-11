@@ -1,0 +1,608 @@
++ set -euo pipefail
++++ dirname scripts/setup_crawler_envs.sh
+++ cd scripts/..
+++ pwd
++ ROOT_DIR=/c/Users/sheq1/Pictures/openai-support-agent-demo
++ ENV_FILE=/c/Users/sheq1/Pictures/openai-support-agent-demo/.env.scrapers
++ LOADER_POSIX=/c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.sh
++ LOADER_POWERSHELL=/c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.ps1
++ LOADER_BATCH=/c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.bat
++ HOOK_MARKER='crawl4AI scraper env'
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.env.scrapers ]]
++ echo 'Loading scraper environment variables from /c/Users/sheq1/Pictures/openai-support-agent-demo/.env.scrapers'
+Loading scraper environment variables from /c/Users/sheq1/Pictures/openai-support-agent-demo/.env.scrapers
++ set -a
++ source /c/Users/sheq1/Pictures/openai-support-agent-demo/.env.scrapers
+++ AUTOMATION_BASE_URL=https://automationghana.com/sitemap_index.xml
+++ WOOCOMMERCE_API_BASE=https://store.automationghana.com/wp-json/wp/v2
++ set +a
++ command -v python3
++ create_env /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1 /c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt
++ local env_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1
++ local requirements_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt
++ [[ ! -f /c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt ]]
++ [[ ! -d /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1 ]]
++ echo 'Using existing virtual environment /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1'
+Using existing virtual environment /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1
++ local activate_script
+++ select_activate_script /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1
+++ local env_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1
+++ local candidate
+++ for candidate in "$env_dir/bin/activate" "$env_dir/Scripts/activate" "$env_dir/Scripts/Activate.ps1"
+++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/bin/activate ]]
+++ for candidate in "$env_dir/bin/activate" "$env_dir/Scripts/activate" "$env_dir/Scripts/Activate.ps1"
+++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate ]]
+++ printf '%s\n' /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate
+++ return 0
++ activate_script=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate
++ [[ /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate == *.ps1 ]]
++ source /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ case "$(uname)" in
++++ uname
++++ cygpath 'C:\Users\sheq1\Pictures\openai-support-agent-demo\.venv-c4ai-v1'
+++ VIRTUAL_ENV=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH='/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl'
+++ PATH='/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts:/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl'
+++ export PATH
+++ VIRTUAL_ENV_PROMPT=.venv-c4ai-v1
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(.venv-c4ai-v1) '
+++ export PS1
+++ hash -r
++ python -m pip install --upgrade pip
+Requirement already satisfied: pip in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (25.3)
++ python -m pip install -r /c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt
+Requirement already satisfied: aiofiles==24.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 1)) (24.1.0)
+Requirement already satisfied: aiohappyeyeballs==2.4.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 2)) (2.4.4)
+Requirement already satisfied: aiohttp==3.11.11 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 3)) (3.11.11)
+Requirement already satisfied: aiosignal==1.3.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 4)) (1.3.2)
+Requirement already satisfied: aiosqlite==0.20.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 5)) (0.20.0)
+Requirement already satisfied: altair==5.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 6)) (5.5.0)
+Requirement already satisfied: annotated-types==0.7.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 7)) (0.7.0)
+Requirement already satisfied: anthropic==0.42.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 8)) (0.42.0)
+Requirement already satisfied: anyio==4.8.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 9)) (4.8.0)
+Requirement already satisfied: attrs==24.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 10)) (24.3.0)
+Requirement already satisfied: beautifulsoup4==4.12.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 11)) (4.12.3)
+Requirement already satisfied: blinker==1.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 12)) (1.9.0)
+Requirement already satisfied: cachetools==5.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 13)) (5.5.0)
+Requirement already satisfied: certifi==2024.12.14 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 14)) (2024.12.14)
+Requirement already satisfied: cffi==1.17.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 15)) (1.17.1)
+Requirement already satisfied: charset-normalizer==3.4.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 16)) (3.4.1)
+Requirement already satisfied: click==8.1.8 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 17)) (8.1.8)
+Requirement already satisfied: colorama==0.4.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 18)) (0.4.6)
+Requirement already satisfied: Crawl4AI==0.4.247 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 19)) (0.4.247)
+Requirement already satisfied: cryptography==44.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 20)) (44.0.0)
+Requirement already satisfied: Deprecated==1.2.15 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 21)) (1.2.15)
+Requirement already satisfied: deprecation==2.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 22)) (2.1.0)
+Requirement already satisfied: distro==1.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 23)) (1.9.0)
+Requirement already satisfied: eval_type_backport==0.2.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 24)) (0.2.2)
+Requirement already satisfied: executing==2.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 25)) (2.1.0)
+Requirement already satisfied: fake-http-header==0.3.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 26)) (0.3.5)
+Requirement already satisfied: filelock==3.16.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 27)) (3.16.1)
+Requirement already satisfied: frozenlist==1.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 28)) (1.5.0)
+Requirement already satisfied: fsspec==2024.12.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 29)) (2024.12.0)
+Requirement already satisfied: gitdb==4.0.12 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 30)) (4.0.12)
+Requirement already satisfied: GitPython==3.1.44 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 31)) (3.1.44)
+Requirement already satisfied: google-auth==2.37.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 32)) (2.37.0)
+Requirement already satisfied: googleapis-common-protos==1.66.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 33)) (1.66.0)
+Requirement already satisfied: gotrue==2.11.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 34)) (2.11.1)
+Requirement already satisfied: greenlet==3.1.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 35)) (3.1.1)
+Requirement already satisfied: griffe==1.5.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 36)) (1.5.4)
+Requirement already satisfied: groq==0.15.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 37)) (0.15.0)
+Requirement already satisfied: h11==0.14.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 38)) (0.14.0)
+Requirement already satisfied: h2==4.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 39)) (4.1.0)
+Requirement already satisfied: hpack==4.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 40)) (4.0.0)
+Requirement already satisfied: httpcore==1.0.7 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 41)) (1.0.7)
+Requirement already satisfied: httpx==0.27.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 42)) (0.27.2)
+Requirement already satisfied: huggingface-hub==0.27.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 43)) (0.27.1)
+Requirement already satisfied: hyperframe==6.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 44)) (6.0.1)
+Requirement already satisfied: idna==3.10 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 45)) (3.10)
+Requirement already satisfied: importlib_metadata==8.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 46)) (8.5.0)
+Requirement already satisfied: iniconfig==2.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 47)) (2.0.0)
+Requirement already satisfied: Jinja2==3.1.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 48)) (3.1.5)
+Requirement already satisfied: jiter==0.8.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 49)) (0.8.2)
+Requirement already satisfied: joblib==1.4.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 50)) (1.4.2)
+Requirement already satisfied: jsonpath-python==1.0.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 51)) (1.0.6)
+Requirement already satisfied: jsonschema==4.23.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 52)) (4.23.0)
+Requirement already satisfied: jsonschema-specifications==2024.10.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 53)) (2024.10.1)
+Requirement already satisfied: litellm==1.57.8 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 54)) (1.57.8)
+Requirement already satisfied: logfire==3.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 55)) (3.1.0)
+Requirement already satisfied: logfire-api==3.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 56)) (3.1.0)
+Requirement already satisfied: lxml==5.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 57)) (5.3.0)
+Requirement already satisfied: markdown-it-py==3.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 58)) (3.0.0)
+Requirement already satisfied: MarkupSafe==3.0.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 59)) (3.0.2)
+Requirement already satisfied: mdurl==0.1.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 60)) (0.1.2)
+Requirement already satisfied: mistralai==1.2.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 61)) (1.2.6)
+Requirement already satisfied: mockito==1.5.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 62)) (1.5.3)
+Requirement already satisfied: multidict==6.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 63)) (6.1.0)
+Requirement already satisfied: mypy-extensions==1.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 64)) (1.0.0)
+Requirement already satisfied: narwhals==1.21.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 65)) (1.21.1)
+Requirement already satisfied: nltk==3.9.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 66)) (3.9.1)
+Requirement already satisfied: numpy==2.2.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 67)) (2.2.1)
+Requirement already satisfied: openai==1.59.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 68)) (1.59.6)
+Requirement already satisfied: opentelemetry-api==1.29.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 69)) (1.29.0)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-common==1.29.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 70)) (1.29.0)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-http==1.29.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 71)) (1.29.0)
+Requirement already satisfied: opentelemetry-instrumentation==0.50b0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 72)) (0.50b0)
+Requirement already satisfied: opentelemetry-proto==1.29.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 73)) (1.29.0)
+Requirement already satisfied: opentelemetry-sdk==1.29.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 74)) (1.29.0)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.50b0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 75)) (0.50b0)
+Requirement already satisfied: packaging==24.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 76)) (24.2)
+Requirement already satisfied: pandas==2.2.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 77)) (2.2.3)
+Requirement already satisfied: pillow==10.4.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 78)) (10.4.0)
+Requirement already satisfied: playwright==1.49.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 79)) (1.49.1)
+Requirement already satisfied: pluggy==1.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 80)) (1.5.0)
+Requirement already satisfied: postgrest==0.19.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 81)) (0.19.1)
+Requirement already satisfied: propcache==0.2.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 82)) (0.2.1)
+Requirement already satisfied: protobuf==5.29.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 83)) (5.29.3)
+Requirement already satisfied: psutil==6.1.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 84)) (6.1.1)
+Requirement already satisfied: pyarrow==18.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 85)) (18.1.0)
+Requirement already satisfied: pyasn1==0.6.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 86)) (0.6.1)
+Requirement already satisfied: pyasn1_modules==0.4.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 87)) (0.4.1)
+Requirement already satisfied: pycparser==2.22 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 88)) (2.22)
+Requirement already satisfied: pydantic==2.10.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 89)) (2.10.5)
+Requirement already satisfied: pydantic-ai==0.0.18 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 90)) (0.0.18)
+Requirement already satisfied: pydantic-ai-slim==0.0.18 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 91)) (0.0.18)
+Requirement already satisfied: pydantic_core==2.27.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 92)) (2.27.2)
+Requirement already satisfied: pydeck==0.9.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 93)) (0.9.1)
+Requirement already satisfied: pyee==12.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 94)) (12.0.0)
+Requirement already satisfied: Pygments==2.19.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 95)) (2.19.1)
+Requirement already satisfied: pyOpenSSL==24.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 96)) (24.3.0)
+Requirement already satisfied: pytest==8.3.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 97)) (8.3.4)
+Requirement already satisfied: pytest-mockito==0.0.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 98)) (0.0.4)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 99)) (2.9.0.post0)
+Requirement already satisfied: python-dotenv==1.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 100)) (1.0.1)
+Requirement already satisfied: pytz==2024.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 101)) (2024.2)
+Requirement already satisfied: PyYAML==6.0.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 102)) (6.0.2)
+Requirement already satisfied: rank-bm25==0.2.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 103)) (0.2.2)
+Requirement already satisfied: realtime==2.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 104)) (2.1.0)
+Requirement already satisfied: referencing==0.35.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 105)) (0.35.1)
+Requirement already satisfied: regex==2024.11.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 106)) (2024.11.6)
+Requirement already satisfied: requests==2.32.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 107)) (2.32.3)
+Requirement already satisfied: rich==13.9.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 108)) (13.9.4)
+Requirement already satisfied: rpds-py==0.22.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 109)) (0.22.3)
+Requirement already satisfied: rsa==4.9 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 110)) (4.9)
+Requirement already satisfied: six==1.17.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 111)) (1.17.0)
+Requirement already satisfied: smmap==5.0.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 112)) (5.0.2)
+Requirement already satisfied: sniffio==1.3.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 113)) (1.3.1)
+Requirement already satisfied: snowballstemmer==2.2.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 114)) (2.2.0)
+Requirement already satisfied: soupsieve==2.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 115)) (2.6)
+Requirement already satisfied: storage3==0.11.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 116)) (0.11.0)
+Requirement already satisfied: streamlit==1.41.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 117)) (1.41.1)
+Requirement already satisfied: StrEnum==0.4.15 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 118)) (0.4.15)
+Requirement already satisfied: supabase==2.11.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 119)) (2.11.0)
+Requirement already satisfied: supafunc==0.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 120)) (0.9.0)
+Requirement already satisfied: tenacity==9.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 121)) (9.0.0)
+Requirement already satisfied: tf-playwright-stealth==1.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 122)) (1.1.0)
+Requirement already satisfied: tiktoken==0.8.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 123)) (0.8.0)
+Requirement already satisfied: tokenizers==0.21.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 124)) (0.21.0)
+Requirement already satisfied: toml==0.10.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 125)) (0.10.2)
+Requirement already satisfied: tornado==6.4.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 126)) (6.4.2)
+Requirement already satisfied: tqdm==4.67.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 127)) (4.67.1)
+Requirement already satisfied: typing-inspect==0.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 128)) (0.9.0)
+Requirement already satisfied: typing_extensions==4.12.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 129)) (4.12.2)
+Requirement already satisfied: tzdata==2024.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 130)) (2024.2)
+Requirement already satisfied: urllib3==2.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 131)) (2.3.0)
+Requirement already satisfied: watchdog==6.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 132)) (6.0.0)
+Requirement already satisfied: websockets==13.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 133)) (13.1)
+Requirement already satisfied: wrapt==1.17.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 134)) (1.17.1)
+Requirement already satisfied: xxhash==3.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 135)) (3.5.0)
+Requirement already satisfied: yarl==1.18.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 136)) (1.18.3)
+Requirement already satisfied: zipp==3.21.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v1\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent/requirements.txt (line 137)) (3.21.0)
++ playwright_args=('install' 'chromium')
++ local playwright_args
++ local uname_out
+++ uname -s
++ uname_out=MINGW64_NT-10.0-26100
++ [[ mingw64_nt-10.0-26100 == linux* ]]
++ python -m playwright install chromium
++ deactivate
++ '[' -n '/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl' ']'
++ PATH='/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl'
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ '[' -n '' ']'
++ hash -r
++ '[' -n '' ']'
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ '[' '!' '' = nondestructive ']'
++ unset -f deactivate
++ install_scraper_env_hooks /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1
++ local env_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1
++ append_posix_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/bin/activate
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/bin/activate
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/bin/activate ]]
++ return 0
++ append_posix_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate ]]
++ python3 - /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate 'crawl4AI scraper env'
++ cat
++ local win_activate_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts
++ local batch_loader
+++ to_windows_path /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.bat
+++ local path=/c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.bat
+++ command -v cygpath
+++ cygpath -w /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.bat
++ batch_loader='C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.bat'
++ append_batch_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate.bat 'C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.bat'
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate.bat
++ local 'loader_path=C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.bat'
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate.bat ]]
++ grep -Fq 'crawl4AI scraper env' /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/activate.bat
++ cat
++ local ps_loader
+++ to_windows_path /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.ps1
+++ local path=/c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.ps1
+++ command -v cygpath
+++ cygpath -w /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.ps1
++ ps_loader='C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.ps1'
++ append_ps_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/Activate.ps1 'C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.ps1'
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/Activate.ps1
++ local 'loader_path=C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.ps1'
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/Activate.ps1 ]]
++ grep -Fq 'crawl4AI scraper env' /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v1/Scripts/Activate.ps1
++ cat
++ create_env /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2 /c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt
++ local env_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2
++ local requirements_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt
++ [[ ! -f /c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt ]]
++ [[ ! -d /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2 ]]
++ echo 'Using existing virtual environment /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2'
+Using existing virtual environment /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2
++ local activate_script
+++ select_activate_script /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2
+++ local env_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2
+++ local candidate
+++ for candidate in "$env_dir/bin/activate" "$env_dir/Scripts/activate" "$env_dir/Scripts/Activate.ps1"
+++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/bin/activate ]]
+++ for candidate in "$env_dir/bin/activate" "$env_dir/Scripts/activate" "$env_dir/Scripts/Activate.ps1"
+++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate ]]
+++ printf '%s\n' /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate
+++ return 0
++ activate_script=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate
++ [[ /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate == *.ps1 ]]
++ source /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ case "$(uname)" in
++++ uname
++++ cygpath 'C:\Users\sheq1\Pictures\openai-support-agent-demo\.venv-c4ai-v2'
+++ VIRTUAL_ENV=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH='/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl'
+++ PATH='/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts:/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl'
+++ export PATH
+++ VIRTUAL_ENV_PROMPT=.venv-c4ai-v2
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1='(.venv-c4ai-v1) '
+++ PS1='(.venv-c4ai-v2) (.venv-c4ai-v1) '
+++ export PS1
+++ hash -r
++ python -m pip install --upgrade pip
+Requirement already satisfied: pip in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (25.3)
++ python -m pip install -r /c/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt
+Requirement already satisfied: aiofiles==24.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 1)) (24.1.0)
+Requirement already satisfied: aiohappyeyeballs==2.6.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 2)) (2.6.1)
+Requirement already satisfied: aiohttp==3.11.18 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 3)) (3.11.18)
+Requirement already satisfied: aiosignal==1.3.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 4)) (1.3.2)
+Requirement already satisfied: aiosqlite==0.21.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 5)) (0.21.0)
+Requirement already satisfied: altair==5.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 6)) (5.5.0)
+Requirement already satisfied: annotated-types==0.7.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 7)) (0.7.0)
+Requirement already satisfied: anthropic==0.50.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 8)) (0.50.0)
+Requirement already satisfied: anyio==4.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 9)) (4.9.0)
+Requirement already satisfied: argcomplete==3.6.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 10)) (3.6.2)
+Requirement already satisfied: asgiref==3.8.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 11)) (3.8.1)
+Requirement already satisfied: attrs==25.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 12)) (25.3.0)
+Requirement already satisfied: backoff==2.2.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 13)) (2.2.1)
+Requirement already satisfied: bcrypt==4.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 14)) (4.3.0)
+Requirement already satisfied: beautifulsoup4==4.13.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 15)) (4.13.4)
+Requirement already satisfied: blinker==1.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 16)) (1.9.0)
+Requirement already satisfied: boto3==1.38.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 17)) (1.38.5)
+Requirement already satisfied: botocore==1.38.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 18)) (1.38.5)
+Requirement already satisfied: Brotli==1.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 19)) (1.1.0)
+Requirement already satisfied: build==1.2.2.post1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 20)) (1.2.2.post1)
+Requirement already satisfied: cachetools==5.5.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 21)) (5.5.2)
+Requirement already satisfied: certifi==2025.4.26 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 22)) (2025.4.26)
+Requirement already satisfied: cffi==1.17.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 23)) (1.17.1)
+Requirement already satisfied: chardet==5.2.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 24)) (5.2.0)
+Requirement already satisfied: charset-normalizer==3.4.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 25)) (3.4.1)
+Requirement already satisfied: chroma-hnswlib==0.7.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 26)) (0.7.6)
+Requirement already satisfied: chromadb==1.0.7 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 27)) (1.0.7)
+Requirement already satisfied: click==8.1.8 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 28)) (8.1.8)
+Requirement already satisfied: cohere==5.15.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 29)) (5.15.0)
+Requirement already satisfied: colorama==0.4.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 30)) (0.4.6)
+Requirement already satisfied: coloredlogs==15.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 31)) (15.0.1)
+Requirement already satisfied: Crawl4AI==0.6.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 32)) (0.6.2)
+Requirement already satisfied: cryptography==44.0.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 33)) (44.0.2)
+Requirement already satisfied: cssselect==1.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 34)) (1.3.0)
+Requirement already satisfied: Deprecated==1.2.18 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 35)) (1.2.18)
+Requirement already satisfied: deprecation==2.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 36)) (2.1.0)
+Requirement already satisfied: distro==1.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 37)) (1.9.0)
+Requirement already satisfied: durationpy==0.9 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 38)) (0.9)
+Requirement already satisfied: eval_type_backport==0.2.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 39)) (0.2.2)
+Requirement already satisfied: executing==2.2.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 40)) (2.2.0)
+Requirement already satisfied: fake-http-header==0.3.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 41)) (0.3.5)
+Requirement already satisfied: fake-useragent==2.2.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 42)) (2.2.0)
+Requirement already satisfied: fastapi==0.115.9 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 43)) (0.115.9)
+Requirement already satisfied: fastavro==1.10.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 44)) (1.10.0)
+Requirement already satisfied: filelock==3.18.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 45)) (3.18.0)
+Requirement already satisfied: flatbuffers==25.2.10 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 46)) (25.2.10)
+Requirement already satisfied: frozenlist==1.6.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 47)) (1.6.0)
+Requirement already satisfied: fsspec==2025.3.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 48)) (2025.3.2)
+Requirement already satisfied: gitdb==4.0.12 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 49)) (4.0.12)
+Requirement already satisfied: GitPython==3.1.44 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 50)) (3.1.44)
+Requirement already satisfied: google-auth==2.39.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 51)) (2.39.0)
+Requirement already satisfied: googleapis-common-protos==1.70.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 52)) (1.70.0)
+Requirement already satisfied: gotrue==2.12.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 53)) (2.12.0)
+Requirement already satisfied: greenlet==3.2.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 54)) (3.2.1)
+Requirement already satisfied: griffe==1.7.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 55)) (1.7.3)
+Requirement already satisfied: groq==0.23.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 56)) (0.23.1)
+Requirement already satisfied: grpcio==1.71.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 57)) (1.71.0)
+Requirement already satisfied: h11==0.16.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 58)) (0.16.0)
+Requirement already satisfied: h2==4.2.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 59)) (4.2.0)
+Requirement already satisfied: hpack==4.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 60)) (4.1.0)
+Requirement already satisfied: httpcore==1.0.9 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 61)) (1.0.9)
+Requirement already satisfied: httptools==0.6.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 62)) (0.6.4)
+Requirement already satisfied: httpx==0.28.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 63)) (0.28.1)
+Requirement already satisfied: httpx-sse==0.4.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 64)) (0.4.0)
+Requirement already satisfied: huggingface-hub==0.30.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 65)) (0.30.2)
+Requirement already satisfied: humanfriendly==10.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 66)) (10.0)
+Requirement already satisfied: humanize==4.12.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 67)) (4.12.2)
+Requirement already satisfied: hyperframe==6.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 68)) (6.1.0)
+Requirement already satisfied: idna==3.10 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 69)) (3.10)
+Requirement already satisfied: importlib_metadata==8.6.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 70)) (8.6.1)
+Requirement already satisfied: importlib_resources==6.5.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 71)) (6.5.2)
+Requirement already satisfied: iniconfig==2.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 72)) (2.1.0)
+Requirement already satisfied: Jinja2==3.1.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 73)) (3.1.6)
+Requirement already satisfied: jiter==0.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 74)) (0.9.0)
+Requirement already satisfied: jmespath==1.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 75)) (1.0.1)
+Requirement already satisfied: joblib==1.4.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 76)) (1.4.2)
+Requirement already satisfied: jsonschema==4.23.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 77)) (4.23.0)
+Requirement already satisfied: jsonschema-specifications==2025.4.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 78)) (2025.4.1)
+Requirement already satisfied: kubernetes==32.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 79)) (32.0.1)
+Requirement already satisfied: litellm==1.67.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 80)) (1.67.5)
+Requirement already satisfied: logfire==3.14.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 81)) (3.14.1)
+Requirement already satisfied: logfire-api==3.14.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 82)) (3.14.1)
+Requirement already satisfied: lxml==5.4.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 83)) (5.4.0)
+Requirement already satisfied: markdown-it-py==3.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 84)) (3.0.0)
+Requirement already satisfied: MarkupSafe==3.0.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 85)) (3.0.2)
+Requirement already satisfied: mcp==1.6.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 86)) (1.6.0)
+Requirement already satisfied: mdurl==0.1.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 87)) (0.1.2)
+Requirement already satisfied: mistralai==1.7.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 88)) (1.7.0)
+Requirement already satisfied: mmh3==5.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 89)) (5.1.0)
+Requirement already satisfied: more-itertools==10.7.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 90)) (10.7.0)
+Requirement already satisfied: mpmath==1.3.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 91)) (1.3.0)
+Requirement already satisfied: multidict==6.4.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 92)) (6.4.3)
+Requirement already satisfied: narwhals==1.37.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 93)) (1.37.1)
+Requirement already satisfied: networkx==3.4.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 94)) (3.4.2)
+Requirement already satisfied: nltk==3.9.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 95)) (3.9.1)
+Requirement already satisfied: numpy==2.2.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 96)) (2.2.5)
+Requirement already satisfied: oauthlib==3.2.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 97)) (3.2.2)
+Requirement already satisfied: onnxruntime==1.21.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 98)) (1.21.1)
+Requirement already satisfied: openai==1.76.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 99)) (1.76.2)
+Requirement already satisfied: opentelemetry-api==1.32.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 100)) (1.32.1)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-common==1.32.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 101)) (1.32.1)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-grpc==1.32.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 102)) (1.32.1)
+Requirement already satisfied: opentelemetry-exporter-otlp-proto-http==1.32.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 103)) (1.32.1)
+Requirement already satisfied: opentelemetry-instrumentation==0.53b1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 104)) (0.53b1)
+Requirement already satisfied: opentelemetry-instrumentation-asgi==0.53b1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 105)) (0.53b1)
+Requirement already satisfied: opentelemetry-instrumentation-fastapi==0.53b1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 106)) (0.53b1)
+Requirement already satisfied: opentelemetry-proto==1.32.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 107)) (1.32.1)
+Requirement already satisfied: opentelemetry-sdk==1.32.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 108)) (1.32.1)
+Requirement already satisfied: opentelemetry-semantic-conventions==0.53b1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 109)) (0.53b1)
+Requirement already satisfied: opentelemetry-util-http==0.53b1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 110)) (0.53b1)
+Requirement already satisfied: orjson==3.10.18 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 111)) (3.10.18)
+Requirement already satisfied: overrides==7.7.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 112)) (7.7.0)
+Requirement already satisfied: packaging==24.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 113)) (24.2)
+Requirement already satisfied: pandas==2.2.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 114)) (2.2.3)
+Requirement already satisfied: pillow==10.4.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 115)) (10.4.0)
+Requirement already satisfied: playwright==1.52.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 116)) (1.52.0)
+Requirement already satisfied: pluggy==1.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 117)) (1.5.0)
+Requirement already satisfied: postgrest==1.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 118)) (1.0.1)
+Requirement already satisfied: posthog==4.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 119)) (4.0.1)
+Requirement already satisfied: prompt_toolkit==3.0.51 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 120)) (3.0.51)
+Requirement already satisfied: propcache==0.3.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 121)) (0.3.1)
+Requirement already satisfied: protobuf==5.29.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 122)) (5.29.4)
+Requirement already satisfied: psutil==7.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 123)) (7.0.0)
+Requirement already satisfied: pyarrow==20.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 124)) (20.0.0)
+Requirement already satisfied: pyasn1==0.6.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 125)) (0.6.1)
+Requirement already satisfied: pyasn1_modules==0.4.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 126)) (0.4.2)
+Requirement already satisfied: pycparser==2.22 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 127)) (2.22)
+Requirement already satisfied: pydantic==2.11.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 128)) (2.11.4)
+Requirement already satisfied: pydantic-ai==0.1.8 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 129)) (0.1.8)
+Requirement already satisfied: pydantic-ai-slim==0.1.8 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 130)) (0.1.8)
+Requirement already satisfied: pydantic-evals==0.1.8 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 131)) (0.1.8)
+Requirement already satisfied: pydantic-graph==0.1.8 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 132)) (0.1.8)
+Requirement already satisfied: pydantic-settings==2.9.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 133)) (2.9.1)
+Requirement already satisfied: pydantic_core==2.33.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 134)) (2.33.2)
+Requirement already satisfied: pydeck==0.9.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 135)) (0.9.1)
+Requirement already satisfied: pyee==13.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 136)) (13.0.0)
+Requirement already satisfied: Pygments==2.19.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 137)) (2.19.1)
+Requirement already satisfied: PyJWT==2.10.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 138)) (2.10.1)
+Requirement already satisfied: pyOpenSSL==25.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 139)) (25.0.0)
+Requirement already satisfied: pyperclip==1.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 140)) (1.9.0)
+Requirement already satisfied: PyPika==0.48.9 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 141)) (0.48.9)
+Requirement already satisfied: pyproject_hooks==1.2.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 142)) (1.2.0)
+Requirement already satisfied: pyreadline3==3.5.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 143)) (3.5.4)
+Requirement already satisfied: pytest==8.3.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 144)) (8.3.5)
+Requirement already satisfied: pytest-mock==3.14.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 145)) (3.14.0)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 146)) (2.9.0.post0)
+Requirement already satisfied: python-dotenv==1.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 147)) (1.1.0)
+Requirement already satisfied: pytz==2025.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 148)) (2025.2)
+Requirement already satisfied: PyYAML==6.0.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 149)) (6.0.2)
+Requirement already satisfied: rank-bm25==0.2.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 150)) (0.2.2)
+Requirement already satisfied: realtime==2.4.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 151)) (2.4.3)
+Requirement already satisfied: referencing==0.36.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 152)) (0.36.2)
+Requirement already satisfied: regex==2024.11.6 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 153)) (2024.11.6)
+Requirement already satisfied: requests==2.32.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 154)) (2.32.3)
+Requirement already satisfied: requests-oauthlib==2.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 155)) (2.0.0)
+Requirement already satisfied: rich==14.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 156)) (14.0.0)
+Requirement already satisfied: rpds-py==0.24.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 157)) (0.24.0)
+Requirement already satisfied: rsa==4.9.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 158)) (4.9.1)
+Requirement already satisfied: s3transfer==0.12.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 159)) (0.12.0)
+Requirement already satisfied: safetensors==0.5.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 160)) (0.5.3)
+Requirement already satisfied: scikit-learn==1.6.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 161)) (1.6.1)
+Requirement already satisfied: scipy==1.15.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 162)) (1.15.2)
+Requirement already satisfied: sentence-transformers==4.1.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 163)) (4.1.0)
+Requirement already satisfied: setuptools==80.0.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 164)) (80.0.1)
+Requirement already satisfied: shellingham==1.5.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 165)) (1.5.4)
+Requirement already satisfied: six==1.17.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 166)) (1.17.0)
+Requirement already satisfied: smmap==5.0.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 167)) (5.0.2)
+Requirement already satisfied: sniffio==1.3.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 168)) (1.3.1)
+Requirement already satisfied: snowballstemmer==2.2.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 169)) (2.2.0)
+Requirement already satisfied: soupsieve==2.7 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 170)) (2.7)
+Requirement already satisfied: sse-starlette==2.3.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 171)) (2.3.3)
+Requirement already satisfied: starlette==0.45.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 172)) (0.45.3)
+Requirement already satisfied: storage3==0.11.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 173)) (0.11.3)
+Requirement already satisfied: streamlit==1.45.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 174)) (1.45.0)
+Requirement already satisfied: StrEnum==0.4.15 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 175)) (0.4.15)
+Requirement already satisfied: supabase==2.15.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 176)) (2.15.1)
+Requirement already satisfied: supafunc==0.9.4 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 177)) (0.9.4)
+Requirement already satisfied: sympy==1.14.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 178)) (1.14.0)
+Requirement already satisfied: tenacity==9.1.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 179)) (9.1.2)
+Requirement already satisfied: tf-playwright-stealth==1.1.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 180)) (1.1.2)
+Requirement already satisfied: threadpoolctl==3.6.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 181)) (3.6.0)
+Requirement already satisfied: tiktoken==0.9.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 182)) (0.9.0)
+Requirement already satisfied: tokenizers==0.21.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 183)) (0.21.1)
+Requirement already satisfied: toml==0.10.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 184)) (0.10.2)
+Requirement already satisfied: torch==2.7.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 185)) (2.7.0)
+Requirement already satisfied: tornado==6.4.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 186)) (6.4.2)
+Requirement already satisfied: tqdm==4.67.1 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 187)) (4.67.1)
+Requirement already satisfied: transformers==4.51.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 188)) (4.51.3)
+Requirement already satisfied: typer==0.15.3 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 189)) (0.15.3)
+Requirement already satisfied: types-requests==2.32.0.20250328 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 190)) (2.32.0.20250328)
+Requirement already satisfied: typing-inspection==0.4.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 191)) (0.4.0)
+Requirement already satisfied: typing_extensions==4.13.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 192)) (4.13.2)
+Requirement already satisfied: tzdata==2025.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 193)) (2025.2)
+Requirement already satisfied: urllib3==2.4.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 194)) (2.4.0)
+Requirement already satisfied: uvicorn==0.34.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 195)) (0.34.2)
+Requirement already satisfied: watchdog==6.0.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 196)) (6.0.0)
+Requirement already satisfied: watchfiles==1.0.5 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 197)) (1.0.5)
+Requirement already satisfied: wcwidth==0.2.13 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 198)) (0.2.13)
+Requirement already satisfied: websocket-client==1.8.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 199)) (1.8.0)
+Requirement already satisfied: websockets==14.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 200)) (14.2)
+Requirement already satisfied: wrapt==1.17.2 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 201)) (1.17.2)
+Requirement already satisfied: xxhash==3.5.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 202)) (3.5.0)
+Requirement already satisfied: yarl==1.20.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 203)) (1.20.0)
+Requirement already satisfied: zipp==3.21.0 in c:\users\sheq1\pictures\openai-support-agent-demo\.venv-c4ai-v2\lib\site-packages (from -r C:/Users/sheq1/Pictures/openai-support-agent-demo/crawl4AI-agent-v2/requirements.txt (line 204)) (3.21.0)
++ playwright_args=('install' 'chromium')
++ local playwright_args
++ local uname_out
+++ uname -s
++ uname_out=MINGW64_NT-10.0-26100
++ [[ mingw64_nt-10.0-26100 == linux* ]]
++ python -m playwright install chromium
+Downloading Chromium 136.0.7103.25 (playwright build v1169)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1169/chromium-win64.zip[22m
+|                                                                                |   0% of 144.4 MiB
+|■■■■■■■■                                                                        |  10% of 144.4 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 144.4 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 144.4 MiB
+Chromium 136.0.7103.25 (playwright build v1169) downloaded to C:\Users\sheq1\AppData\Local\ms-playwright\chromium-1169
+Downloading FFMPEG playwright build v1011[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-win64.zip[22m
+|                                                                                |   0% of 1.3 MiB
+|■■■■■■■■                                                                        |  10% of 1.3 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  81% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 1.3 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 1.3 MiB
+FFMPEG playwright build v1011 downloaded to C:\Users\sheq1\AppData\Local\ms-playwright\ffmpeg-1011
+Downloading Chromium Headless Shell 136.0.7103.25 (playwright build v1169)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1169/chromium-headless-shell-win64.zip[22m
+|                                                                                |   0% of 89.1 MiB
+|■■■■■■■■                                                                        |  10% of 89.1 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 89.1 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 89.1 MiB
+Chromium Headless Shell 136.0.7103.25 (playwright build v1169) downloaded to C:\Users\sheq1\AppData\Local\ms-playwright\chromium_headless_shell-1169
++ deactivate
++ '[' -n '/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl' ']'
++ PATH='/c/Users/sheq1/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/sheq1/bin:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand:/c/Users/sheq1/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli:/c/Python313/Scripts:/c/Python313:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/c/Program Files/PuTTY:/c/Program Files/Hornetsecurity/VMBackup:/c/Program Files/Hornetsecurity/VMBackup/ManagementTools:/c/Program Files (x86)/HP/HP OCR/DB_Lib:/c/Program Files/HP/Common/HPDestPlgIn:/c/Program Files (x86)/HP/Common/HPDestPlgIn:/c/Program Files (x86)/Admin Arsenal/PDQ Deploy:/c/Program Files (x86)/Admin Arsenal/PDQ Inventory:/c/Program Files/nodejs:/c/ProgramData/chocolatey/bin:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/cmd:/c/Program Files/CMake/bin:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/ngrok:/c/Program Files/Docker/Docker/resources/bin:/c/Users/sheq1/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/sheq1/AppData/Local/Programs/Python/Python310:/c/Users/sheq1/AppData/Local/Microsoft/WindowsApps:/c/Users/sheq1/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/sheq1/AppData/Roaming/npm:/c/Program Files/nodejs:/c/Users/sheq1/AppData/Roaming/Python/Python313/Scripts:/c/Users/sheq1/AppData/Local/Programs/Ollama:/c/Users/sheq1/ngrok:/c/Program Files (x86)/cloudflared:/c/Users/sheq1/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts:/usr/bin/vendor_perl:/usr/bin/core_perl'
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ '[' -n '' ']'
++ hash -r
++ '[' -n '(.venv-c4ai-v1) ' ']'
++ PS1='(.venv-c4ai-v1) '
++ export PS1
++ unset _OLD_VIRTUAL_PS1
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ '[' '!' '' = nondestructive ']'
++ unset -f deactivate
++ install_scraper_env_hooks /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2
++ local env_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2
++ append_posix_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/bin/activate
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/bin/activate
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/bin/activate ]]
++ return 0
++ append_posix_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate ]]
++ python3 - /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate 'crawl4AI scraper env'
++ cat
++ local win_activate_dir=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts
++ local batch_loader
+++ to_windows_path /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.bat
+++ local path=/c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.bat
+++ command -v cygpath
+++ cygpath -w /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.bat
++ batch_loader='C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.bat'
++ append_batch_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate.bat 'C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.bat'
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate.bat
++ local 'loader_path=C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.bat'
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate.bat ]]
++ grep -Fq 'crawl4AI scraper env' /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/activate.bat
++ cat
++ local ps_loader
+++ to_windows_path /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.ps1
+++ local path=/c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.ps1
+++ command -v cygpath
+++ cygpath -w /c/Users/sheq1/Pictures/openai-support-agent-demo/scripts/load_scraper_env.ps1
++ ps_loader='C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.ps1'
++ append_ps_hook /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/Activate.ps1 'C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.ps1'
++ local activate_file=/c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/Activate.ps1
++ local 'loader_path=C:\Users\sheq1\Pictures\openai-support-agent-demo\scripts\load_scraper_env.ps1'
++ [[ -f /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/Activate.ps1 ]]
++ grep -Fq 'crawl4AI scraper env' /c/Users/sheq1/Pictures/openai-support-agent-demo/.venv-c4ai-v2/Scripts/Activate.ps1
++ cat
++ echo 'Virtual environments ready.'
+Virtual environments ready.

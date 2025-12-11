@@ -1,0 +1,134 @@
+[Skip to content](https://automationghana.com/industries-we-serve/#content)
+[ Facebook ](https://www.facebook.com/automationgh/) [ Instagram ](https://www.instagram.com/automationgh/) [ Linkedin ](https://www.linkedin.com/company/the-automation-ghana-limited/) [ Youtube ](https://www.youtube.com/channel/UCurrRDUSm5oIW39VXjn1u0w) [ Flickr ](https://www.flickr.com/photos/181794037@N07/)
+Search
+  * [ Careers ](https://automationghana.com/tagg-career-opportunities/)
+  * [ CSR ](https://automationghana.com/www-automationghana-com-impact-our-community/)
+  * [ News ](https://automationghana.com/news/)
+  * [ Contact Us ](http://automationghana.com/contact-us/)
+  * [ Our Store ](https://store.automationghana.com/)
+
+
+[ ![](https://automationghana.com/wp-content/uploads/2023/07/tag_logo.png) ](https://automationghana.com)
+  * [About Us](https://automationghana.com/new-home-2/)
+  * [Sustainability](https://automationghana.com/sustainability/)
+    * [Quality](https://automationghana.com/quality/)
+    * [Health and Safety](https://automationghana.com/health-and-safety/)
+    * [Climate Change And The Environment](https://automationghana.com/climate-change/)
+    * [Corporate Social Responsibility](https://automationghana.com/corporate-social-responsibility/)
+    * [Our Business](https://automationghana.com/our-business/)
+![](https://automationghana.com/wp-content/uploads/2023/09/Sustainability-page.jpg)
+    * [ Quality ](https://automationghana.com/quality/)
+    * [ Health & Safety ](https://automationghana.com/health-and-safety/)
+    * [ Climate Change & The Environment ](https://automationghana.com/climate-change/)
+    * [ Corporate Social Responsibility ](https://automationghana.com/corporate-social-responsibility/)
+    * [ Our Business ](https://automationghana.com/our-business/)
+  * [Our Brands](https://automationghana.com/industries-we-serve/)
+    * [ASL](https://automationghana.com/asl/)
+    * [ESL](https://automationghana.com/esl/)
+    * [PPA](https://automationghana.com/ppa/)
+No content found
+  * [Our Solutions](https://automationghana.com/industries-we-serve/)
+## Building Solutions
+    * [ Building Management System ](https://automationghana.com/solutions/building-management-system/)
+    * [ Smart Home Solutions ](https://automationghana.com/solutions/smart-home-solutions/)
+    * [ Energy Monitoring and Management ](https://automationghana.com/solutions/energy-monitoring-and-management/)
+    * [ Solar PV Systems ](https://automationghana.com/solutions/solar-pv-systems/)
+    * [ View More ](https://automationghana.com/solution-categories/building-solutions/)
+## Food & Beverage Solutions
+    * [ Electrical & Equipment Installation ](https://automationghana.com/solutions/electrical-equipment-installation/)
+    * [ PLC & SCADA Programming ](https://automationghana.com/solutions/plc-scada-programming/)
+    * [ Electrical & Equipment installation ](https://automationghana.com/solutions/electrical-equipment-installation-2/)
+    * [ Automated Inventory Management ](https://automationghana.com/solutions/automated-inventory-management/)
+    * [ View More ](https://automationghana.com/solution-categories/food-beverage/)
+## Power & Energy
+    * [ Integrated Terminal Management and Tank Farm Solutions ](https://automationghana.com/solutions/terminal-management-and-tank-farm-solutions-2/)
+    * [ Demand Side Management ](https://automationghana.com/solutions/demand-side-management/)
+    * [ Lightning Protection Systems ](https://automationghana.com/solutions/lightning-protection-systems/)
+    * [ Earth Resistance Testing ](https://automationghana.com/solutions/earth-resistance-testing/)
+    * [ View All Solutions ](https://automationghana.com/our-solutions/)
+  * [Our Services](https://automationghana.com/industries-we-serve/)
+    * [Projects](https://automationghana.com/projects-portfolio/)
+    * [Support Services](https://automationghana.com/support-services/)
+    * [The Automation Ghana Academy](https://automationghana.com/training-old/)
+    * [Sale](https://automationghana.com/industries-we-serve/)
+![](https://automationghana.com/wp-content/uploads/2024/03/Cables-and-Cable-management.png)
+    * [ Our Projects ](https://automationghana.com/projects/)
+    * [ Support Services ](https://automationghana.com/support/)
+    * [ The Automation Ghana Academy ](https://automationghana.com/training/)
+  * [Industries](https://automationghana.com/industries-we-serve/)
+    * [Food & Beverage](https://automationghana.com/solution-categories/food-beverage/)
+    * [Building Solutions](https://automationghana.com/solution-categories/building-solutions/)
+    * [Mining](https://automationghana.com/solution-categories/mining/)
+    * [Oil & Gas](https://automationghana.com/solution-categories/oil-gas/)
+    * [Telecommnunications](https://automationghana.com/solution-categories/telecommnunications/)
+    * [Power & Energy](https://automationghana.com/solution-categories/power-energy/)
+![Untitled 3](https://automationghana.com/wp-content/uploads/2023/09/Untitled-3.jpg)
+    * [ Food & Beverage ](https://automationghana.com/solution-categories/food-beverage/)
+    * [ Building Solutions ](https://automationghana.com/solution-categories/building-solutions/)
+    * [ Minning ](https://automationghana.com/solution-categories/mining/)
+    * [ Oil & Gas ](https://automationghana.com/solution-categories/oil-gas/)
+    * [ Telecommnunications ](https://automationghana.com/solution-categories/telecommnunications/)
+    * [ Power & Energy ](https://automationghana.com/solution-categories/power-energy/)
+
+
+[![Website TAGG Logo BLUE](http://tagg2.automationghana.com/wp-content/uploads/2023/07/Website-TAGG-Logo-BLUE.png)](https://automationghana.com)X
+## Industries We Serve
+  1. [Home](https://automationghana.com)
+  2. Industries We Serve
+
+
+## Domestic, Commercial and Industrial Applications
+![The Automation Ghana Group - Transform your living space into a dynamic environment that caters to every aspect of your life making it not just a home but a smart haven](https://automationghana.com/wp-content/uploads/2024/03/Transform-your-living-space-into-a-dynamic-environment-that-caters-to-every-aspect-of-your-life-making-it-not-just-a-home-but-a-smart-haven.png)
+Building Solutions 
+We equip your building for purpose, comfort, security, safety and sustainable energy management. 
+[ Learn more ](https://automationghana.com/solution-categories/building-solutions/)
+![The Automation Ghana Group](https://automationghana.com/wp-content/uploads/2024/05/Packaging-Machinery.png)
+Food & Beverage Solutions 
+We offer technological solutions to ensure efficiency, profitability and sustainability in the F & B industry. 
+[ Learn more ](https://automationghana.com/solution-categories/food-beverage/)
+![Industries Website Mining Metals Cement Banner11](https://automationghana.com/wp-content/uploads/2023/09/Industries-Website-Mining_Metals__Cement_Banner11.jpg)
+Mining 
+We optimize your Mining process from Preparation to Beneficiation and Auxiliary processes via reliable instrumentation. 
+[ Learn more ](https://automationghana.com/solution-categories/mining/)
+![The Automation Ghana Group - Solar PV inverters](https://automationghana.com/wp-content/uploads/2024/03/Solar-PV-inverters.png)
+Power & Energy 
+TAGG provides solutions to monitor risk factors and critical nodes across power networks in real time. 
+[ Learn more ](https://automationghana.com/solution-categories/power-energy/)
+![The Automation Ghana Group](https://automationghana.com/wp-content/uploads/2024/05/Processing-Manufacturing.png)
+Telecommunications 
+Class nostra vehicula tortor parturient ante habitasse mollis quis urna mauris duis. 
+[ Learn more ](https://automationghana.com/solution-categories/telecommnunications/)
+![The Automation Ghana Group - smartphone monitoring](https://automationghana.com/wp-content/uploads/2024/04/smartphone_monitoring.png)
+Oil & Gas 
+We offer efficient, flexible, future-proof solutions expertly engineered to meet evolving challenges and meet SIL requirements in the Oil & Gas industry. 
+[ Learn more ](https://automationghana.com/solution-categories/oil-gas/)
+![AutomationGhana logo white](https://automationghana.com/wp-content/uploads/2023/07/AutomationGhana_logo_white.png)
+We provide unique electrical and automation services and products through innovation, training and exceptional customer service.
+[ Facebook ](https://www.facebook.com/automationgh/) [ Instagram ](https://www.instagram.com/automationgh/) [ Linkedin ](https://www.linkedin.com/company/the-automation-ghana-limited/) [ Youtube ](https://www.youtube.com/channel/UCurrRDUSm5oIW39VXjn1u0w) [ Flickr ](https://www.flickr.com/photos/181794037@N07/)
+#### Our Brands
+  * [ Automation Solutions Ltd ](https://automationghana.com/asl/)
+  * [ Electrical Switchgear Ltd ](https://automationghana.com/esl/)
+  * [ Process & Plant Automation Ltd ](https://automationghana.com/ppa/)
+  * [ Our Store ](https://store.automationghana.com)
+
+
+#### Quick Links
+  * [ About Us ](https://automationghana.com/new-home-2/)
+  * [ Our Solutions ](https://automationghana.com/our-solutions/)
+  * [ Support Services ](https://automationghana.com/support/)
+  * [ Industries We Serve ](https://automationghana.com/industries-we-serve/)
+  * [ CSR ](https://automationghana.com/www-automationghana-com-impact-our-community/)
+  * [ Policies ](https://automationghana.com/policies/)
+  * [ Contact Us ](http://automationghana.com/contact-us/)
+
+
+#### Let's Connect
+[**Digital Address:** GT-366-3796](https://ghanapostgps.com/mapview.html)
+#####  Telephone 
++233 30 281 2680 ‭+233 55 005 5511‬ 
+#####  Email Address 
+enquiries@automationghana.com 
+© Copyright 2024. The Automation Ghana Group.
+  * [ Policy Statements ](https://automationghana.com/policies/)
+
+

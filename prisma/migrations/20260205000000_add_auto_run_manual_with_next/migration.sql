@@ -1,0 +1,2 @@
+ALTER TABLE "ScrapeJob"
+ADD COLUMN "autoRunManualWithNext" BOOLEAN NOT NULL DEFAULT false;

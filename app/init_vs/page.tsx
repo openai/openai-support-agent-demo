@@ -1,7 +1,11 @@
 "use client";
 import { KB_FOLDERS } from "@/config/demoData";
 import { Copy } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+
+import { AppPageShell } from "@/components/app-page-shell";
+import { defaultRouteForRoles } from "@/lib/auth/routes";
+import { useSessionStore } from "@/stores/useSessionStore";
 
 interface KBFile {
   type: string;
@@ -10,20 +14,48 @@ interface KBFile {
 }
 
 export default function InitVS() {
-  const [loading, setLoading] = useState(false);
+  const roles = useSessionStore((state) => state.roles);
+  const defaultRedirect = useMemo(() => defaultRouteForRoles(roles), [roles]);
+  const [loadingOpenAI, setLoadingOpenAI] = useState(false);
   const [vectorStoreId, setVectorStoreId] = useState<string | null>(null);
-  const [status, setStatus] = useState<string>("");
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<boolean>(false);
+  const [statusOpenAI, setStatusOpenAI] = useState<string>("");
+  const [errorOpenAI, setErrorOpenAI] = useState<string | null>(null);
+  const [successOpenAI, setSuccessOpenAI] = useState<boolean>(false);
+
+  const [loadingOllama, setLoadingOllama] = useState(false);
+  const [statusOllama, setStatusOllama] = useState<string>("");
+  const [errorOllama, setErrorOllama] = useState<string | null>(null);
+  const [successOllama, setSuccessOllama] = useState(false);
+
+  if (!roles) {
+    return (
+      <AppPageShell>
+        <div className="p-6 text-sm text-muted-foreground">Checking your access…</div>
+      </AppPageShell>
+    );
+  }
+
+  if (!roles.includes("admin")) {
+    return (
+      <AppPageShell>
+        <div className="p-6">
+          <p className="rounded bg-destructive/10 p-4 text-destructive">
+            You are not authorized to manage the vector store. Return to {defaultRedirect}.
+          </p>
+        </div>
+      </AppPageShell>
+    );
+  }
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
   };
 
-  const handleInitialize = async () => {
-    setLoading(true);
-    setSuccess(false);
-    setStatus("Creating vector store...");
+  const handleInitializeOpenAI = async () => {
+    setLoadingOpenAI(true);
+    setSuccessOpenAI(false);
+    setErrorOpenAI(null);
+    setStatusOpenAI("Creating vector store...");
     const response = await fetch("/api/vector_stores/create_store", {
       method: "POST",
       body: JSON.stringify({ name: "CS Knowledge Base" }),
@@ -31,13 +63,10 @@ export default function InitVS() {
     if (response.status === 200) {
       const vs = await response.json();
       setVectorStoreId(vs.id);
-      setStatus("Fetching files...");
+      setStatusOpenAI("Fetching files...");
       const filesList: KBFile[] = [];
       for (const folder of KB_FOLDERS) {
-        const folderFiles = await fetch(
-          `/api/list_files?folder=${folder}`
-        ).then((res) => res.json());
-        console.log(`Files found in folder ${folder}:`, folderFiles);
+        const folderFiles = await fetch(`/api/list_files?folder=${folder}`).then((res) => res.json());
         filesList.push(
           ...folderFiles.map((file: string) => ({
             type: folder,
@@ -46,15 +75,14 @@ export default function InitVS() {
           }))
         );
       }
-      setStatus(`Uploading ${filesList.length} files to vector store...`);
+      setStatusOpenAI(`Uploading ${filesList.length} files to vector store...`);
       for (const file of filesList) {
-        console.log(`Uploading file ${file.filepath}...`);
-        const response = await fetch("/api/vector_stores/upload_file", {
+        const uploadRes = await fetch("/api/vector_stores/upload_file", {
           method: "POST",
           body: JSON.stringify({ filePath: file.filepath }),
         });
-        if (response.status === 200) {
-          const fileData = await response.json();
+        if (uploadRes.status === 200) {
+          const fileData = await uploadRes.json();
           const fileId = fileData.id;
           const attributes = {
             type: file.type,
@@ -66,92 +94,181 @@ export default function InitVS() {
             body: JSON.stringify({ vectorStoreId: vs.id, fileId, attributes }),
           });
           if (addFileResponse.status === 200) {
-            setStatus(`Uploaded ${file.type}/${file.filename}`);
+            setStatusOpenAI(`Uploaded ${file.type}/${file.filename}`);
           } else {
-            setError(`Failed to add file ${file.filename} to vector store`);
+            setErrorOpenAI(`Failed to add file ${file.filename} to vector store`);
           }
         } else {
-          setError(`Failed to upload file ${file.filename} to vector store`);
+          setErrorOpenAI(`Failed to upload file ${file.filename} to vector store`);
         }
       }
-      setStatus("Uploaded all files to vector store.");
-      setLoading(false);
-      setSuccess(true);
+      setStatusOpenAI("Uploaded all files to vector store.");
+      setLoadingOpenAI(false);
+      setSuccessOpenAI(true);
     } else {
-      setError("Failed to create vector store");
-      setLoading(false);
+      setErrorOpenAI("Failed to create vector store");
+      setLoadingOpenAI(false);
     }
   };
 
+  const handleInitializeOllama = async () => {
+    setLoadingOllama(true);
+    setSuccessOllama(false);
+    setErrorOllama(null);
+    setStatusOllama("Initializing local vector store...");
+    const res = await fetch("/api/local_vector_store/init", {
+      method: "POST",
+    });
+    if (res.ok) {
+      setStatusOllama("Local vector store initialized.");
+      setSuccessOllama(true);
+    } else {
+      setErrorOllama("Failed to initialize local vector store");
+    }
+    setLoadingOllama(false);
+  };
+
+  const handleRebuildOllama = async () => {
+    setLoadingOllama(true);
+    setSuccessOllama(false);
+    setErrorOllama(null);
+    setStatusOllama("Rebuilding embeddings...");
+    const res = await fetch("/api/local_vector_store/init?force=true", {
+      method: "POST",
+    });
+    if (res.ok) {
+      setStatusOllama("Knowledge base rebuilt.");
+      setSuccessOllama(true);
+    } else {
+      setErrorOllama("Failed to rebuild vector store");
+    }
+    setLoadingOllama(false);
+  };
+
   return (
-    <div className="h-screen w-full bg-white flex flex-col items-center pt-16 md:pt-32">
-      <div className="flex flex-col gap-4 max-w-lg">
-        <div className="text-2xl font-bold">Initialize the Vector Store</div>
-        <div className="text-sm text-zinc-500 space-y-2">
-          <p>
-            For this demo to work, you need to load knowledge base content into
-            a vector store. This vector store will be used by the File Search
-            tool to search for relevant content that can help answer the user
-            query.
-          </p>
-          <p>
-            When you click on the button below, the content contained in the{" "}
-            <span className="font-mono bg-zinc-100 rounded-md p-1">
-              /public/knowledge_base
-            </span>{" "}
-            and{" "}
-            <span className="font-mono bg-zinc-100 rounded-md p-1">
-              /public/faq
-            </span>{" "}
-            folders will be loaded into a vector store.
-          </p>
-          <p>
-            Feel free to update these articles with your own content. If you
-            change the folder names, make sure to update the reference to the
-            folders below. After you make changes, you can re-initialize the
-            vector store to load the new content.
-          </p>
-          <p>
-            Once the content is loaded, you will see the newly created vector
-            store&apos;s ID below. You can then configure the vector store ID in{" "}
-            <span className="font-mono bg-zinc-100 rounded-md p-1">
-              /config/constants.ts
-            </span>{" "}
-            to use with the File Search tool.
-          </p>
-        </div>
-        <div className="flex">
-          {!loading ? (
-            <div
-              className="bg-black text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-zinc-800 cursor-pointer"
-              onClick={handleInitialize}
-            >
-              Initialize vector store
+    <AppPageShell>
+      <div className="flex flex-col gap-6">
+        <div className="rounded-xl border bg-card p-6 shadow-sm">
+          <div className="flex flex-col gap-4 border-b border-border pb-4 md:flex-row md:items-start md:justify-between md:gap-6">
+            <div className="max-w-2xl space-y-2">
+              <div className="text-2xl font-bold">Initialize the Vector Store</div>
+              <p className="text-sm text-muted-foreground">
+                Load knowledge base content into a vector store so your agents can search and retrieve it. Content in
+                <span className="font-mono rounded-md bg-accent px-1 py-0.5">/public/knowledge_base</span> and
+                <span className="font-mono rounded-md bg-accent px-1 py-0.5">/public/faq</span> will be embedded using
+                Ollama and stored locally.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Update these articles anytime and re-run initialization to rebuild embeddings. All controls below work in
+                dev and production without changing backend logic.
+              </p>
             </div>
-          ) : (
-            <div className="text-sm text-zinc-500 animate-pulse">{status}</div>
-          )}
-        </div>
-      </div>
-      <div className="mt-6 text-left w-full max-w-lg">
-        {error && <div className="text-red-500 text-sm">{error}</div>}
-        {success && !error && (
-          <div className="text-zinc-600 text-sm">
-            Knowledge base updated successfully.
-            <div className="flex items-center gap-2 mt-4">
-              <div className="text-zinc-900">Vector Store ID:</div>
-              <div className="font-mono text-sm p-1 bg-zinc-100 rounded-md">
-                {vectorStoreId ?? ""}
-              </div>
-              <Copy
-                onClick={() => copyToClipboard(vectorStoreId ?? "")}
-                size={16}
-                className="cursor-pointer text-zinc-400 hover:text-zinc-600 transition-all duration-100"
-              />
+            <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+              {statusOpenAI ? <div className="rounded-lg bg-accent px-3 py-2">{statusOpenAI}</div> : null}
+              {statusOllama ? <div className="rounded-lg bg-accent px-3 py-2">{statusOllama}</div> : null}
             </div>
           </div>
-        )}
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="flex flex-col gap-3 rounded-xl border bg-card p-5 shadow-sm">
+            <div className="text-sm font-semibold">OpenAI-managed vector store</div>
+            <p className="text-xs text-muted-foreground">
+              Creates a hosted vector store and uploads all demo files. Use this path when you want OpenAI to manage
+              storage.
+            </p>
+            {!loadingOpenAI ? (
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition hover:brightness-110"
+                onClick={handleInitializeOpenAI}
+              >
+                Initialize with OpenAI
+              </button>
+            ) : (
+              <div className="text-sm text-muted-foreground">{statusOpenAI || "Preparing OpenAI vector store..."}</div>
+            )}
+            {errorOpenAI && <div className="text-sm text-destructive">{errorOpenAI}</div>}
+            {successOpenAI && !errorOpenAI && (
+              <div className="rounded-lg bg-muted/40 p-3 text-sm text-muted-foreground">
+                <div className="font-medium text-foreground">Knowledge base updated.</div>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="text-muted-foreground">Vector Store ID:</span>
+                  <span className="font-mono rounded-md bg-accent px-2 py-1 text-xs text-foreground">
+                    {vectorStoreId ?? ""}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => copyToClipboard(vectorStoreId ?? "")}
+                    className="inline-flex items-center gap-1 rounded border px-2 py-1 text-xs text-foreground transition hover:border-primary"
+                  >
+                    <Copy size={14} /> Copy
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-3 rounded-xl border bg-card p-5 shadow-sm">
+            <div className="text-sm font-semibold">Local Ollama vector store</div>
+            <p className="text-xs text-muted-foreground">
+              Generates embeddings locally. Use “Rebuild” after changing files to refresh the embeddings without altering
+              backend APIs.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {!loadingOllama ? (
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition hover:brightness-110"
+                  onClick={handleInitializeOllama}
+                >
+                  Initialize with Ollama
+                </button>
+              ) : (
+                <div className="text-sm text-muted-foreground">{statusOllama || "Preparing Ollama vector store..."}</div>
+              )}
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary shadow-sm transition hover:bg-primary hover:text-primary-foreground"
+                onClick={handleRebuildOllama}
+                disabled={loadingOllama}
+              >
+                Rebuild
+              </button>
+            </div>
+            {errorOllama && <div className="text-sm text-destructive">{errorOllama}</div>}
+            {successOllama && !errorOllama && (
+              <div className="rounded-lg bg-muted/40 p-3 text-sm text-muted-foreground">
+                <div className="font-medium text-foreground">Knowledge base refreshed.</div>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="text-muted-foreground">Vector Store ID:</span>
+                  <span className="font-mono rounded-md bg-accent px-2 py-1 text-xs text-foreground">local-ollama</span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="space-y-4 rounded-xl border bg-card p-6 shadow-sm">
+          <div className="space-y-1">
+            <div className="text-lg font-semibold">Files included</div>
+            <p className="text-sm text-muted-foreground">Each item below is sent to the vector store during initialization.</p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {KB_FOLDERS.map((folder) => (
+              <div key={folder} className="rounded-lg border bg-muted/40 p-4 shadow-sm">
+                <div className="text-sm font-semibold">{folder}</div>
+                <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+                  <li>
+                    Files will be fetched from <span className="font-mono text-[11px]">/public/{folder}</span>.
+                  </li>
+                  <li>Each file is uploaded with its type and filename metadata.</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </AppPageShell>
   );
 }

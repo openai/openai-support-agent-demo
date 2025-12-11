@@ -1,9 +1,9 @@
 export async function POST(
   request: Request,
-  { params }: { params: { order_id: string } }
+  { params }: { params: Promise<{ order_id: string }> }
 ) {
   try {
-    const { order_id } = params;
+    const { order_id } = await params;
     const { product_ids } = await request.json();
     // Simulate return initiation
     return new Response(

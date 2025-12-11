@@ -8,15 +8,14 @@ export const CUSTOMER_DETAILS = {
   id: "cus_28X44",
   orderNb: 8,
   signupDate: "2023-11-28",
+  email: "janet.deer@gmail.com",
+  phone: "+1234567890",
+  address: "123 Main St, Anytown, USA",
 };
 
 export const DEFAULT_ACTION: Action = {
   name: "create_ticket",
-  parameters: {
-    user_id: CUSTOMER_DETAILS.id,
-    type: "other",
-    details: "Need more help with the request",
-  },
+  parameters: {},
 };
 
 export const DEFAULT_ARTICLES: FAQExtract[] = [

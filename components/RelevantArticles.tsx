@@ -18,7 +18,7 @@ function Article({
       <div className="flex items-baseline gap-2">
         <div className=" text-black font-bold">{title}</div>
         <Link href={link} target="_blank">
-          <div className="flex items-center  text-[#ED6A5E] gap-1">
+          <div className="flex items-center  text-[#2B83F6] gap-1">
             <div className="text-xs font-medium">
               {type === "knowledge_base" ? "INTERNAL" : "PUBLIC FAQ"}
             </div>
@@ -45,6 +45,7 @@ function ArticleSkeleton() {
 
 export default function RelevantArticles() {
   const FAQExtracts = useDataStore((s) => s.FAQExtracts);
+  const relevantArticlesError = useDataStore((s) => s.relevantArticlesError);
   const relevantArticlesLoading = useDataStore(
     (s) => s.relevantArticlesLoading
   );
@@ -56,6 +57,8 @@ export default function RelevantArticles() {
           <ArticleSkeleton />
           <ArticleSkeleton />
         </>
+      ) : relevantArticlesError ? (
+        <div className="text-sm text-zinc-500">{relevantArticlesError}</div>
       ) : (
         FAQExtracts?.map((article, index) => (
           <Article
