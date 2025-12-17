@@ -1,6 +1,6 @@
 import { ChatMessage } from "@/lib/assistant";
 import React from "react";
-import ReactMarkdown from "react-markdown";
+import { Streamdown } from "streamdown";
 
 interface MessageProps {
   message: ChatMessage;
@@ -28,9 +28,9 @@ const Message: React.FC<MessageProps> = ({
             >
               <div>
                 <div>
-                  <ReactMarkdown>
-                    {message.content[0].text as string}
-                  </ReactMarkdown>
+                  <Streamdown mode="static" className="[&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+                    {message.content[0].text}
+                  </Streamdown>
                 </div>
               </div>
             </div>
@@ -41,9 +41,9 @@ const Message: React.FC<MessageProps> = ({
           <div className="flex">
             <div className="mr-4 rounded-[16px] rounded-bl-[4px] px-4 py-2 md:mr-24 text-zinc-900 bg-[#ECECF1] font-light">
               <div>
-                <ReactMarkdown>
-                  {message.content[0].text as string}
-                </ReactMarkdown>
+                <Streamdown mode="static" className="[&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+                  {message.content[0].text}
+                </Streamdown>
               </div>
             </div>
           </div>

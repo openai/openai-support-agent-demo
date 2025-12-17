@@ -1,7 +1,7 @@
 "use client";
 import { Link } from "lucide-react";
 import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
+import { Streamdown } from "streamdown";
 
 export default function ListArticles({
   title,
@@ -84,9 +84,9 @@ export default function ListArticles({
               }}
             />
           </h2>
-          <ReactMarkdown className="text-zinc-600 prose prose-zinc text-justify">
+          <Streamdown mode="static">
             {content}
-          </ReactMarkdown>
+          </Streamdown>
         </div>
       ))}
     </div>
