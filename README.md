@@ -37,16 +37,28 @@ Feel free to customize this demo to suit your specific use case.
    git clone https://github.com/openai/openai-support-agent-demo.git
    ```
 
-3. **Set the OpenAI API key:**
+3. **Configure an AI provider:**
 
    2 options:
 
-   - Set the `OPENAI_API_KEY` environment variable [globally in your system](https://platform.openai.com/docs/libraries#create-and-export-an-api-key)
-   - Set the `OPENAI_API_KEY` environment variable in the project: Create a `.env` file at the root of the project and add the following line (see `.env.example` for reference):
+   Create a `.env` file at the root of the project. OpenAI is the default provider:
 
    ```bash
+   AI_PROVIDER=openai
    OPENAI_API_KEY=<your_api_key>
+   OPENAI_MODEL=gpt-5.2
    ```
+
+   To use OpenRouter instead, set `AI_PROVIDER=openrouter` and provide
+   `OPENROUTER_API_KEY` and `OPENROUTER_MODEL`. Use an OpenRouter catalog slug
+   such as `openai/gpt-5.2`—not `openrouter/gpt-5.2`. Provider selection,
+   credentials, base URL, and model live in `ai/config.ts`; application routes
+   only import `aiClient` and `aiModel` from `ai/client.ts`.
+
+   OpenRouter keeps the application's custom function tools, but OpenAI's
+   managed `file_search`/Vector Store feature is unavailable there and is
+   automatically omitted. Use `AI_PROVIDER=openai` when the demo's knowledge
+   base search is required.
 
 4. **Install dependencies:**
 
@@ -110,7 +122,8 @@ Note that the functions that are executed are just placeholders and are not actu
 
 To customize this demo you can:
 
-- Edit prompts, initial message and model in `config/constants.ts`
+- Edit prompts and the initial message in `config/constants.ts`
+- Select the provider and model through environment variables (see `.env.example`)
 - Edit available functions in `config/tools-list.ts`
 - Edit functions logic in `config/functions.ts`
 - (optional) Edit the demo data in `config/demoData.ts`

@@ -1,5 +1,4 @@
-import OpenAI from "openai";
-const openai = new OpenAI();
+import { aiClient } from "@/ai/client";
 import fs from "fs";
 import path from "path";
 export async function POST(request: Request) {
@@ -8,7 +7,7 @@ export async function POST(request: Request) {
   try {
     const workingDir = process.cwd();
     const fileContent = fs.createReadStream(path.join(workingDir, filePath));
-    const file = await openai.files.create({
+    const file = await aiClient.files.create({
       file: fileContent,
       purpose: "assistants",
     });

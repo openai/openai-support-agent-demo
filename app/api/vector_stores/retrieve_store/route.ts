@@ -1,12 +1,10 @@
-import OpenAI from "openai";
-
-const openai = new OpenAI();
+import { aiClient } from "@/ai/client";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const vectorStoreId = searchParams.get("vector_store_id");
   try {
-    const vectorStore = await openai.vectorStores.retrieve(
+    const vectorStore = await aiClient.vectorStores.retrieve(
       vectorStoreId || ""
     );
     return new Response(JSON.stringify(vectorStore), { status: 200 });

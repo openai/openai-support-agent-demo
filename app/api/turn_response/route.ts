@@ -1,20 +1,22 @@
-import { MODEL } from "@/config/constants";
+import {
+  aiClient,
+  aiModel,
+  getResponseProviderOptions,
+} from "@/ai/client";
 import { NextResponse } from "next/server";
-import OpenAI from "openai";
+import { APIError } from "openai";
 
 export async function POST(request: Request) {
   try {
     const { messages, tools } = await request.json();
     console.log("Received messages:", messages);
 
-    const openai = new OpenAI();
-
-    const events = await openai.responses.create({
-      model: MODEL,
+    const providerOptions = getResponseProviderOptions(tools);
+    const events = await aiClient.responses.create({
+      model: aiModel,
       input: messages,
-      tools,
+      ...providerOptions,
       stream: true,
-      include: ["file_search_call.results"],
       parallel_tool_calls: false,
     });
 
@@ -49,11 +51,24 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Error in POST handler:", error);
+
+    const status = error instanceof APIError ? error.status : 500;
+    const providerMessage =
+      error instanceof APIError &&
+      error.error &&
+      typeof error.error === "object" &&
+      "message" in error.error &&
+      typeof error.error.message === "string"
+        ? error.error.message
+        : undefined;
+
     return NextResponse.json(
       {
-        error: error instanceof Error ? error.message : "Unknown error",
+        error:
+          providerMessage ??
+          (error instanceof Error ? error.message : "Unknown error"),
       },
-      { status: 500 }
+      { status }
     );
   }
 }

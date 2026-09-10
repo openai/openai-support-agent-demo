@@ -1,6 +1,4 @@
-import OpenAI from "openai";
-
-const openai = new OpenAI();
+import { aiClient } from "@/ai/client";
 
 export async function POST(request: Request) {
   const { vectorStoreId, fileId, attributes } = await request.json();
@@ -8,7 +6,7 @@ export async function POST(request: Request) {
     `Adding file ${fileId} with attributes ${JSON.stringify(attributes)}`
   );
   try {
-    const vectorStore = await openai.vectorStores.files.create(vectorStoreId, {
+    const vectorStore = await aiClient.vectorStores.files.create(vectorStoreId, {
       file_id: fileId,
       attributes,
     });
