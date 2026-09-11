@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import type { AIConfig, AIProvider } from "./config";
+import type { AIConfig, AIProvider, VectorStoreConfig } from "./config";
 
 type ProviderClientFactory = (config: AIConfig) => OpenAI;
 
@@ -35,4 +35,9 @@ export function getProviderCapabilities(
   provider: AIProvider
 ): AIProviderCapabilities {
   return providerCapabilities[provider];
+}
+
+/** Creates the client for OpenAI-managed resources, never an inference proxy. */
+export function createVectorStoreClient(config: VectorStoreConfig): OpenAI {
+  return new OpenAI({ apiKey: config.apiKey });
 }

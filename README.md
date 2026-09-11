@@ -55,10 +55,16 @@ Feel free to customize this demo to suit your specific use case.
    credentials, base URL, and model live in `ai/config.ts`; application routes
    only import `aiClient` and `aiModel` from `ai/client.ts`.
 
-   OpenRouter keeps the application's custom function tools, but OpenAI's
-   managed `file_search`/Vector Store feature is unavailable there and is
-   automatically omitted. Use `AI_PROVIDER=openai` when the demo's knowledge
-   base search is required.
+   With `AI_PROVIDER=openai`, the demo uses OpenAI Vector Stores and managed
+   `file_search`; set `OPENAI_VECTOR_STORE_API_KEY` (or `OPENAI_API_KEY`) when
+   those resource calls use a separate key. With `AI_PROVIDER=openrouter`, the
+   demo indexes the knowledge base locally using the OpenRouter Embeddings API
+   and injects the highest-scoring chunks into the support-agent prompt.
+   Set `OPENROUTER_EMBEDDING_MODEL` to override its default of
+   `openai/text-embedding-3-small`.
+
+   The OpenRouter index is stored in `.data/openrouter-vector-stores.json` for
+   this demo. Use a durable database/vector database in production.
 
 4. **Install dependencies:**
 

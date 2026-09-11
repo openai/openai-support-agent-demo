@@ -1,7 +1,15 @@
 import "server-only";
 import OpenAI from "openai";
-import { getAIConfig, type AIConfig } from "./config";
-import { createProviderClient, getProviderCapabilities } from "./provider";
+import {
+  getAIConfig,
+  getVectorStoreConfig,
+  type AIConfig,
+} from "./config";
+import {
+  createProviderClient,
+  createVectorStoreClient,
+  getProviderCapabilities,
+} from "./provider";
 
 type ResponseTool = { type?: string; [key: string]: unknown };
 
@@ -17,6 +25,18 @@ const config = getAIConfig();
 
 export const aiClient = createAIClient(config);
 export const aiModel = config.model;
+
+let vectorStoreClient: OpenAI | undefined;
+
+/**
+ * Lazily creates an OpenAI client for Vector Stores. Keeping it separate from
+ * `aiClient` prevents OpenRouter's base URL from being used for OpenAI-only
+ * resource APIs.
+ */
+export function getVectorStoreClient(): OpenAI {
+  vectorStoreClient ??= createVectorStoreClient(getVectorStoreConfig());
+  return vectorStoreClient;
+}
 
 /**
  * Returns a provider-compatible Responses API payload. Callers only deal in

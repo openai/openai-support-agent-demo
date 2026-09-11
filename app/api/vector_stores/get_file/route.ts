@@ -1,11 +1,11 @@
-import { aiClient } from "@/ai/client";
+import { retrieveKnowledgeFile } from "@/ai/knowledge-store";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const vectorStoreId = searchParams.get("vectorStoreId") ?? "";
   const fileId = searchParams.get("fileId") ?? "";
   try {
-    const fileContent = await aiClient.vectorStores.files.retrieve(
+    const fileContent = await retrieveKnowledgeFile(
       vectorStoreId,
       fileId
     );

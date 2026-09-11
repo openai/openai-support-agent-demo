@@ -299,6 +299,12 @@ export const processMessages = async () => {
         break;
       }
 
+      case "knowledge_search.completed": {
+        setFAQExtracts(data.results ?? []);
+        setRelevantArticlesLoading(false);
+        break;
+      }
+
       case "response.output_item.done": {
         // After output item is done, adding tool call ID
         const { item } = data || {};

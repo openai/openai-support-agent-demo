@@ -8,10 +8,16 @@ export interface AIConfig {
   model: string;
 }
 
+/** Configuration for OpenAI-managed resources such as Vector Stores. */
+export interface VectorStoreConfig {
+  apiKey: string;
+}
+
 type Environment = NodeJS.ProcessEnv;
 
 const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
 const OPENROUTER_MODEL_ALIASES = new Set(["openrouter/auto"]);
+const DEFAULT_OPENROUTER_EMBEDDING_MODEL = "openai/text-embedding-3-small";
 
 function requiredEnv(name: string, environment: Environment): string {
   const value = environment[name]?.trim();
@@ -73,4 +79,34 @@ export function getAIConfig(environment: Environment = process.env): AIConfig {
     apiKey: requiredEnv("OPENAI_API_KEY", environment),
     model: requiredEnv("OPENAI_MODEL", environment),
   };
+}
+
+/**
+ * Vector Stores are an OpenAI-managed resource, independent from the model
+ * inference provider. This permits OpenRouter inference with OpenAI-backed RAG.
+ */
+export function getVectorStoreConfig(
+  environment: Environment = process.env
+): VectorStoreConfig {
+  const apiKey =
+    environment.OPENAI_VECTOR_STORE_API_KEY?.trim() ??
+    environment.OPENAI_API_KEY?.trim();
+
+  if (!apiKey) {
+    throw new Error(
+      "Vector Store is not configured. Set OPENAI_VECTOR_STORE_API_KEY (or OPENAI_API_KEY). OpenRouter does not provide OpenAI Vector Stores."
+    );
+  }
+
+  return { apiKey };
+}
+
+/** The model used by the local RAG store when inference is routed via OpenRouter. */
+export function getOpenRouterEmbeddingModel(
+  environment: Environment = process.env
+): string {
+  return (
+    environment.OPENROUTER_EMBEDDING_MODEL?.trim() ??
+    DEFAULT_OPENROUTER_EMBEDDING_MODEL
+  );
 }
