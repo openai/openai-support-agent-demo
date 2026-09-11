@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { ChatMessage, Item } from "@/lib/assistant";
-import { ChatCompletionMessageParam } from "openai/resources/chat/completions";
 import { INITIAL_MESSAGE } from "@/config/constants";
 import { DEFAULT_ACTION } from "@/config/demoData";
 
@@ -9,11 +8,15 @@ export interface Action {
   parameters: any;
 }
 
+// Provider-neutral payload persisted by the client between turns. The server
+// adapter is the only layer responsible for translating it to an AI SDK call.
+export type ConversationItem = Record<string, unknown>;
+
 interface ConversationState {
   // Items displayed in the chat
   chatMessages: Item[];
   // Items sent to the Responses API
-  conversationItems: any[];
+  conversationItems: ConversationItem[];
 
   annotations: any[];
 
@@ -32,9 +35,9 @@ interface ConversationState {
   setAgentTyping: (typing: boolean) => void;
 
   setChatMessages: (items: Item[]) => void;
-  setConversationItems: (messages: any[]) => void;
+  setConversationItems: (messages: ConversationItem[]) => void;
   addChatMessage: (item: Item) => void;
-  addConversationItem: (message: ChatCompletionMessageParam) => void;
+  addConversationItem: (message: ConversationItem) => void;
   setRecommendedActions: (actions: Action[]) => void;
   setSuggestedMessage: (message: ChatMessage | null) => void;
   setSuggestedMessageDone: (done: boolean) => void;

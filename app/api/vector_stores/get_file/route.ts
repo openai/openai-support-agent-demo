@@ -1,13 +1,11 @@
-import OpenAI from "openai";
-
-const openai = new OpenAI();
+import { retrieveKnowledgeFile } from "@/ai/knowledge-store";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const vectorStoreId = searchParams.get("vectorStoreId") ?? "";
   const fileId = searchParams.get("fileId") ?? "";
   try {
-    const fileContent = await openai.vectorStores.files.retrieve(
+    const fileContent = await retrieveKnowledgeFile(
       vectorStoreId,
       fileId
     );

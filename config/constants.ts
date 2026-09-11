@@ -1,7 +1,5 @@
 import { AGENT_NAME } from "./demoData";
 
-export const MODEL = "gpt-5.2";
-
 // Developer prompt for the assistant
 export const DEVELOPER_PROMPT = `
 You are an assistant helping a customer service representative named ${AGENT_NAME}. Respond as if you were ${AGENT_NAME}.

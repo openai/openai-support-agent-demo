@@ -1,17 +1,10 @@
-import OpenAI from "openai";
-const openai = new OpenAI();
-import fs from "fs";
-import path from "path";
+import { uploadKnowledgeFile } from "@/ai/knowledge-store";
+
 export async function POST(request: Request) {
   const { filePath } = await request.json();
 
   try {
-    const workingDir = process.cwd();
-    const fileContent = fs.createReadStream(path.join(workingDir, filePath));
-    const file = await openai.files.create({
-      file: fileContent,
-      purpose: "assistants",
-    });
+    const file = await uploadKnowledgeFile(filePath);
 
     return new Response(JSON.stringify(file), { status: 200 });
   } catch (error) {

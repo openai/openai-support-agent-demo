@@ -34,6 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
+# Local OpenRouter RAG index (development only)
+.data/
+
 # vercel
 .vercel
 
